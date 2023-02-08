@@ -1,0 +1,13 @@
+# Ignore the build directories
+/private_multiplication_js
+/private_multiplication_cpp
+node_modules
+/package-lock.json
+/build
+
+# Ignore proof and input files
+groth16_proof.json
+plonk_proof.json
+input.json
+public.json
+witness.wtns
