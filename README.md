@@ -11,7 +11,7 @@ This is a particular simple circuit, but it is a good starting point for more co
 
 1. The circuit gets two private inputs (witness) and multiplies them. The result is then revealed by the prover (public input).
 2. The circuit checks that the two inputs are smaller than the multiplication result, which itself is less than 2^255. This removes trivial solutions, such as `1 * n = n`, as well as solutions that exploit modular arithmetics, such as `a * b = n = -a * -b`.
-   3. The circuit checks that the first input is smaller or equal to the second input. This removes trivial solution permutations, such as `a * b = n = b * a`.
+3. The circuit checks that the first input is smaller or equal to the second input. This removes trivial solution permutations, such as `a * b = n = b * a`.
 
 #### Future work
 

@@ -1,6 +1,6 @@
 use ark_crypto_primitives::crh::injective_map::{PedersenCRHCompressor, TECompressor};
 use ark_crypto_primitives::crh::injective_map::constraints::{PedersenCRHCompressorGadget, TECompressorGadget};
-use ark_crypto_primitives::crh::pedersen;
+use ark_crypto_primitives::crh::{pedersen, TwoToOneCRHGadget};
 use ark_crypto_primitives::CRHGadget;
 use ark_ed_on_bls12_381::constraints::EdwardsVar;
 use ark_ed_on_bls12_381::EdwardsProjective;
@@ -41,6 +41,6 @@ pub type LeafHashGadget = PedersenCRHCompressorGadget<EdwardsProjective, TECompr
 pub type LeafHashParamVars = <LeafHashGadget as CRHGadget<LeafHash, ConstraintF>>::ParametersVar;
 
 // Define parameters variables that would be input to the gadget for inner hash
-pub type InnerHashParamVars = <InnerHashGadget as CRHGadget<InnerHash, EdwardsVar>>::ParametersVar;
+pub type InnerHashParamVars = <InnerHashGadget as TwoToOneCRHGadget<InnerHash, ConstraintF>>::ParametersVar;
 
 pub type ConstraintF = ark_ed_on_bls12_381::Fq;
