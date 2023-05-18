@@ -5,7 +5,8 @@ edition = "2021"
 
 [dependencies]
 backtrace = { version = "0.3", optional = true }
-halo2_proofs = { version = "0.3.0" }
+halo2_proofs = { version = "0.3.0", features = ["dev-graph"] }
 group = "0.13"
 ff = "0.13"
 pasta_curves = "0.5"
+plotters = "0.3.4"
