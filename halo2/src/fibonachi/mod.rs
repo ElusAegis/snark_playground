@@ -1,2 +1,2 @@
+pub(crate) mod chip;
 mod circuit;
-mod chip;

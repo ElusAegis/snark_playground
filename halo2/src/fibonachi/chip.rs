@@ -9,8 +9,8 @@ use halo2_proofs::poly::Rotation;
 pub(crate) struct FibChipConfig {
     selector: Selector,
     initiator: Selector,
-    num1: Column<Advice>,
-    num2: Column<Advice>
+    pub(crate)  num1: Column<Advice>,
+    pub(crate) num2: Column<Advice>
 }
 
 pub(crate) struct FibChip<F: PrimeField> {
@@ -102,7 +102,7 @@ impl <F: PrimeField> FibChip<F> {
 
     pub(crate) fn assign(&self, layouter: &mut impl Layouter<F>, target: u64) -> Result<AssignedCell<F, F>, Error> {
 
-        layouter.assign_region(|| "initial row", |mut region| {
+        layouter.assign_region(|| "fib_region", |mut region| {
 
             self.config.selector.enable(&mut region, 0)?;
 
