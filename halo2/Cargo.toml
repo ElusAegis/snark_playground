@@ -1,0 +1,11 @@
+[package]
+name = "private-multiplication-halo2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+backtrace = { version = "0.3", optional = true }
+halo2_proofs = { version = "0.3.0" }
+group = "0.13"
+ff = "0.13"
+pasta_curves = "0.5"
